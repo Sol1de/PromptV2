@@ -36,7 +36,7 @@ main {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    width: 70%;
+    width: 65%;
     margin-right: 10px;
     background-color: red
 }
@@ -52,14 +52,21 @@ main {
 .infos-user {
     display: flex;
     background-color: var(--main-background-color);
-    min-height: 30%;
+    min-height: 35%;
     border-radius: 20px;
     margin-bottom: 15px;
     align-items: center;
 }
 
+.status {
+    margin-left: 20px;
+}
+
+.status > p {
+    margin: 0;
+}
+
 #pseudo {
-    margin: inherit;
     color: white;
     font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 800;
@@ -81,16 +88,24 @@ main {
 }
 
 .more-infos {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 24px;
     color: white;
 }
 
 .more-infos > ul {
     list-style: none;
+    align-items: center;
+    margin: 0;
+}
+
+.more-infos > ul > li {
+    margin-bottom: 20px;
 }
 
 #mail #creation #mdp {
@@ -102,7 +117,7 @@ main {
 .post-history {
     display:flex;
     background-color: var(--main-background-color);
-    min-height: 70%;
+    min-height: 65%;
     border-radius: 20px;
 }
 
@@ -110,7 +125,7 @@ main {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    width: 30%;
+    width: 35%;
     margin-left: 10px;
     margin-right: 5px;
     background-color: green;

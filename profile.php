@@ -41,9 +41,9 @@
 
                 <div class="more-infos">
                     <ul>
-                        <li>Mail : <p id="mail"></p></li>
-                        <li>Créé le : <p id="creation"></p></li>
-                        <li>Mdp : <p id="mdp"></p></li>
+                        <li>Mail : exemple@email.com</li>
+                        <li>Créé le : 02/06/23</li>
+                        <li>Mdp : MDPexemple</li>
                     </ul>
 
                 </div>
