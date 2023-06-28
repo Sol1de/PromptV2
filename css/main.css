@@ -286,12 +286,17 @@ footer {
     bottom: 0; 
     width: 100%;
     height: 7vh;
+    display: flex;
+    justify-content: center;
 }
 
 .footer-content {
     display: flex;
-    color: white;
+    color: #BDBDBD;
     position: fixed;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 @media screen and (max-width: 1300px) {
