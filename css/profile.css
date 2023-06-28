@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;800&display=swap');
+
+body {
+    --first-background-color: black;
+    --main-background-color: #39394D;
+    --post-background-color: #6B6B8E;
+    --time-color: #BDBDBD;
+    margin: 0;
+    background-color: var(--first-background-color);
+    box-sizing: border-box;
+}
+
+header {
+    background-color: var(--main-background-color);
+    padding-right: 10px;
+    min-height: 120px;
+    display: flex;
+}
+
+.header-logo {
+    position: absolute;
+    right: 0;
+}
+
+main {
+    display: flex;
+    margin-top: 15px;
+    margin-left: 18px;
+    margin-right: 18px;
+    margin-bottom: 50px;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width: 70%;
+    margin-right: 10px;
+    background-color: red
+}
+
+.profile-image {
+    height: 160px;
+    width: 160px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 18px;
+}
+
+.infos-user {
+    display: flex;
+    background-color: var(--main-background-color);
+    min-height: 30%;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+#pseudo {
+    margin: inherit;
+    color: white;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+}
+
+#connexion {
+    margin-top: 2px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    color: #00AB07;
+}
+
+.deconnexion {
+    background-color: transparent;
+    border: 0;
+    margin-bottom: 10px;
+}
+
+.more-infos {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: white;
+}
+
+.more-infos > ul {
+    list-style: none;
+}
+
+#mail #creation #mdp {
+    margin: 0;
+    color: #909090;
+}
+
+
+.post-history {
+    display:flex;
+    background-color: var(--main-background-color);
+    min-height: 70%;
+    border-radius: 20px;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width: 30%;
+    margin-left: 10px;
+    margin-right: 5px;
+    background-color: green;
+}
+

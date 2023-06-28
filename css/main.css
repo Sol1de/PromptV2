@@ -2,13 +2,17 @@
 
 
 body {
+    --first-background-color: black;
+    --main-background-color: #39394D;
+    --post-background-color: #6B6B8E;
+    --time-color: #BDBDBD;
     margin: 0;
-    background-color: black;
+    background-color: var(--first-background-color);
     box-sizing: border-box;
 }
 
 header {
-    background-color: #39394D;
+    background-color: var(--main-background-color);
     padding-right: 10px;
     min-height: 120px;
     display: flex;
@@ -31,8 +35,8 @@ header {
 .main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    background-color: #39394D;
+    justify-content: space-between;
+    background-color: var(--main-background-color);
     height: 100%;
     width: 76%;
     margin-right: 12px;
@@ -42,12 +46,15 @@ header {
 }
 
 .post {
-    background-color: #6B6B8E;
+    
+    background-color: var(--post-background-color);
     width: 48%;
     margin-top: 10px;
     border-radius: 20px;
     min-height: 270px;
     max-height: 270px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .profile-picture {
@@ -72,7 +79,7 @@ header {
 }
 
 .time {
-    color: #BDBDBD;
+    color: var(--time-color);
     font-size: 14px;
     font-weight: 400;
 }
@@ -118,11 +125,11 @@ body {
 
 body::-webkit-scrollbar {
     width: 8px;
-    background-color: #39394D;
+    background-color: var(--main-background-color);
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: #6B6B8E;
+    background-color: var(--post-background-color)
 }
 
 body::-webkit-scrollbar-thumb:hover {
@@ -130,7 +137,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 body::-webkit-scrollbar-track {
-    background-color: #39394D;
+    background-color: var(--main-background-color);
 }
 
 body::-webkit-scrollbar-track:hover {
@@ -148,7 +155,7 @@ body::-webkit-scrollbar-track:hover {
 
 .user {
     display: flex;
-    background-color: #39394D;
+    background-color: var(--main-background-color);
     height: 28vh;
     border-radius: 20px;
     margin-bottom: 9px; 
@@ -210,7 +217,7 @@ body::-webkit-scrollbar-track:hover {
 }
 
 .search {
-    background-color: #39394D; 
+    background-color: var(--main-background-color);
     height: 400px;
     border-radius: 20px;
 }
@@ -281,7 +288,7 @@ body::-webkit-scrollbar-track:hover {
     }
 
 footer {
-    background-color: black;
+    background-color: var(--first-background-color);
     position: fixed; 
     bottom: 0; 
     width: 100%;

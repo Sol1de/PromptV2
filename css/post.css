@@ -15,11 +15,19 @@
   
   .modal-content {
     background-color: #414158;
-    margin: 15% auto;
     padding: 20px;
     border: none;
     border-radius: 10px;
     width: 50%;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    animation: drop-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @keyframes drop-top {
+    from {top: 0%;}
+    to {top: 35%;}
   }
   
   .modal-content textarea {
@@ -46,5 +54,10 @@
   
   .modal-content input[type="hidden"] {
     display: none;
+  }
+
+  @keyframes mymove {
+    from {top: 0px;}
+    to {top: 200px;}
   }
 

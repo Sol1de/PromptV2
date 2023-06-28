@@ -21,7 +21,7 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/navstyle.css">
+    <link rel="stylesheet" href="css/sidenav.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="https://kit.fontawesome.com/f66cb7be42.js" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
@@ -45,6 +45,20 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
 
         <main class="main">
+            <?php if (isset($_SESSION['user_name'])) { ?>
+
+                <div class="connected">
+                    <p>Bonjour <span><?= $_SESSION['user_name'] ?></span></p>
+                </div>
+
+            <?php } else { ?>
+
+                <div class="no-connected">
+                    <p>Vous devez vous <span><a href="login.php" id="connected">connecter</a></span> afin de pouvoir poster !</p>
+                </div>
+                
+            <?php } ?>
+
             <?php foreach ($posts as $post) { ?>
                 <div class="post">
                     <div class="username">
@@ -109,8 +123,8 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
     <div id="modal" class="post-container">
         <div class="modal-content">
             <span class="close" onclick="closeModal()"><i class="fa-solid fa-xmark fa-bounce fa-xl" style="color: #24242e;"></i></span>
-            <form class="postForm" method="POST" action="insertTW.php">
-            <textarea type="text" name="send-content" placeholder="une envie de partager ?"></textarea>
+            <form class="postForm" method="POST" action="insert-post.php">
+            <textarea type="text" name="content" placeholder="une envie de partager ?"></textarea>
             <button type="submit" name="send-post"><i class="fa-regular fa-paper-plane fa-beat-fade fa-2xl" style="color: #24242e;"></i></button>
             <input type="hidden" name="name" value="<?= $_SESSION['user_name'] ?>">
             </form>
