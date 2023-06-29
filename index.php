@@ -1,7 +1,4 @@
 <?php
-
-session_start();
-
 require "template/database.php";
 
 //préparation
@@ -28,6 +25,18 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
     <title>Prompt</title>
 </head>
 <body>
+
+<?php if (isset($_SESSION['user_mail'])) { ?>
+    
+<?php } else { ?>
+    <div class="no-connected">
+        <div class="no-connected-container">
+            <p>Vous devez vous <span><a href="connexion.php" id="connected">connecter</a></span> afin de pouvoir poster !</p>
+        </div>
+    </div>
+
+<?php } ?>
+
     <header>
         <span class="openbtn" onclick="toggleNav()"><i class="fa-solid fa-bars fa-3x" style="color: #ffffff;"></i></span>
         <div class="header-logo">
@@ -40,24 +49,12 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
         <a href="searching.php">Recherche</a>
         <a href="profile.php">Compte</a>
         <a href="about.php">Infos</a>
-    </div>
+        <a href="connexion.php">Connexion</a>
+    </div>              
     
     <div class="container">
 
         <main class="main">
-            <?php if (isset($_SESSION['user_name'])) { ?>
-
-                <div class="connected">
-                    <p>Bonjour <span><?= $_SESSION['user_name'] ?></span></p>
-                </div>
-
-            <?php } else { ?>
-
-                <div class="no-connected">
-                    <p>Vous devez vous <span><a href="login.php" id="connected">connecter</a></span> afin de pouvoir poster !</p>
-                </div>
-                
-            <?php } ?>
 
             <?php foreach ($posts as $post) { ?>
                 <div class="post">
@@ -100,7 +97,7 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         
                         <div class="deconnexion">
-                            <button class="deconnexion" type="reset"><i class="fa-solid fa-arrow-right-from-bracket fa-2xl" style="color: #ff4343;"></i></button>
+                            <a href="deconnexion.php"><button class="deconnexion" type="reset"><i class="fa-solid fa-arrow-right-from-bracket fa-2xl" style="color: #ff4343;"></i></button></a>
                         </div>
                     </div>
                 

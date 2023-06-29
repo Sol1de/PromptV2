@@ -1,3 +1,31 @@
+<?php
+    require 'template/database.php';
+
+
+    // vérifier si utilisateur connecté
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: connexion.php");
+        exit;
+    }
+
+    // informations de la session de l'utilisateur
+    $user_id = $_SESSION['user_id'];
+    $user_mail = $_SESSION['user_mail'];
+
+    //préparation
+    $requete = $database->prepare("SELECT * FROM user WHERE id = 'user_id'");
+
+    //éxecution
+    $requete->execute();
+
+    //tablaeau associatif
+    $user_info = $requete->fetchAll(PDO::FETCH_ASSOC);
+
+    // informations de general de l'utilisateur
+    $user_name = $user_info['name'];
+    $user_date = $user_info['creation'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +52,7 @@
         <a href="searching.php">Recherche</a>
         <a href="profile.php">Compte</a>
         <a href="about.php">Infos</a>
+        <a href="connexion.php">Connexion</a>
     </div>
 
     <main>
@@ -34,16 +63,16 @@
 
                 <div class="status">
 
-                    <p id="pseudo">Pseudo</p>
-                    <p id="connexion">Connecté <button class="deconnexion" type="reset"><i class="fa-solid fa-arrow-right-from-bracket fa-2xl" style="color: #ff4343;"></i></button></p>
+                    <p id="pseudo"><?php echo $user_name; ?></p>
+                    <p id="connexion">Connecté <a href="deconnexion.php"><button class="deconnexion" type="submit"><i class="fa-solid fa-arrow-right-from-bracket fa-2xl" style="color: #ff4343;"></i></button></a></p>
 
                 </div>
 
                 <div class="more-infos">
                     <ul>
-                        <li>Mail : exemple@email.com</li>
-                        <li>Créé le : 02/06/23</li>
-                        <li>Mdp : MDPexemple</li>
+                        <li>Mail : <?php echo $user_mail; ?></li>
+                        <li>Créé le : <?php echo $user_date; ?></li>
+                        <li>ID utilisateur : #<?php echo $user_id; ?></li>
                     </ul>
 
                 </div>

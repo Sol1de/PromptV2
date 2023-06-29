@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 require 'template/database.php';
 
 //$insert = $database -> prepare("INSERT INTO tweet (contenu) VALUES (:Contenu) ");

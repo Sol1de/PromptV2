@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 //On se connecte a la base de donnée
 try {
