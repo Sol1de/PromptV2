@@ -11,20 +11,22 @@
     // informations de la session de l'utilisateur
     $user_id = $_SESSION['user_id'];
     $user_mail = $_SESSION['user_mail'];
+    $user_name = $_SESSION['user_name'];
 
-    //préparation
-    $requete = $database->prepare("SELECT * FROM user WHERE id = 'user_id'");
+    //préparation 
+    $requete = $database->prepare("SELECT * FROM user WHERE id = :user_id");
 
     //éxecution
-    $requete->execute();
+    $requete->execute(['user_id' => $user_id]);
 
     //tablaeau associatif
-    $user_info = $requete->fetchAll(PDO::FETCH_ASSOC);
+    $user_info = $requete->fetch(PDO::FETCH_ASSOC);
 
     // informations de general de l'utilisateur
     $user_name = $user_info['name'];
     $user_date = $user_info['creation'];
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,8 +80,11 @@
                 </div>
 
             </div>
-
+            
             <div class="post-history">
+                    <div class="content-post-history">
+ 
+                    </div>
 
             </div>
 
@@ -87,6 +92,17 @@
 
         
         <div class="left-side">
+
+            <div class="search">
+                <form class="form-searchbar" method="GET" action="search.php">
+                    <input class="searchbar" type="search" name="search" id="" placeholder="Rechercher"><button class="searchbutton"type="submit"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #626268;"></i></button>
+                </form>
+
+                <div class="search-result">
+                    <p>Aucun resultats trouvé</p>
+                </div>
+
+            </div>
 
         </div>
     </main>

@@ -50,7 +50,7 @@
                 <div class="action-button">
 
                     <button class="send" type="submit">S'inscrire</button> 
-                    <a href="connexion.php" id="switch">J'ai déjaun compte</a>
+                    <a href="connexion.php" id="switch">J'ai déja un compte</a>
 
                 </div>
             </form>

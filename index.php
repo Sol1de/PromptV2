@@ -77,7 +77,13 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         <div class="content">
                             <p><?= $post['content'] ?></p>
-                        </div>               
+                        </div>
+                        <p>Tag : <?= $post['tag'] ?></p>
+                        
+                        <form class="form" action="delete.php" method="POST">
+                            <input type="hidden" name="supp" value="<?= $post['id'] ?>">
+                            <button type="submit">Supp</button>
+                        </form>
 
                     </div>
 
@@ -92,7 +98,7 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
                     <div class="profile-action">
 
                         <div class="status">
-                            <p id="pseudo">Pseudo</p>
+                            <p id="pseudo"><?php $SESSION['user_name'] ?></p>
                             <p id="connexion">Connecté</p>
                         </div>
                         
@@ -122,6 +128,18 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
             <span class="close" onclick="closeModal()"><i class="fa-solid fa-xmark fa-bounce fa-xl" style="color: #24242e;"></i></span>
             <form class="postForm" method="POST" action="insert-post.php">
             <textarea type="text" name="content" placeholder="une envie de partager ?"></textarea>
+            <select name="tag" id="">
+                <option value="general">général</option>
+                <option value="infos">infos</option>
+                <option value="life">life</option>
+                <option value="work">work</option>
+                <option value="travel">travel</option>
+                <option value="sport">sport</option>
+                <option value="informatique">informatique</option>
+                <option value="cuisine">cuisine</option>
+                <option value="musique">musique</option>
+                <option value="cinéma">cinéma</option>
+            </select>
             <button type="submit" name="send-post"><i class="fa-regular fa-paper-plane fa-beat-fade fa-2xl" style="color: #24242e;"></i></button>
             <input type="hidden" name="name" value="<?= $_SESSION['user_name'] ?>">
             </form>

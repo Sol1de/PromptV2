@@ -19,15 +19,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Password is correct
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_mail'] = $user['mail'];
+            $_SESSION['user_name'] = $user['name'];
+            $_SESSION['user_date'] = $user['creation'];
             header("Location: index.php");
-            exit(); // Important: Terminate the script after redirecting
+            exit(); 
         } else {
-            // Password is invalid
+            // mot de passe invalide
             $error_message = "Nom d'utilisateur ou mot de passe incorrect.";
         }
 
     } else {
-        // User not found
+        // utilisateur non trouvé
         $error_message = "Nom d'utilisateur ou mot de passe incorrect.";
     }
 }

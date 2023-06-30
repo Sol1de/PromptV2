@@ -6,7 +6,7 @@ function toggleNav(){
   
   if (sidenav.style.width === "250px") {
     sidenav.style.width = "0";
-    main.style.marginLeft = "0";
+    main.style.marginLeft = "0"; 
   } 
 
   if (sidenav.style.width === "150px") {
