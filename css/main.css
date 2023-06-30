@@ -289,7 +289,8 @@ body::-webkit-scrollbar-track:hover {
 
 .search {
     background-color: var(--main-background-color);
-    height: 400px;
+    height: 100%;
+    padding-bottom: 10px;
     border-radius: 20px;
 }
 

@@ -61,3 +61,17 @@ function no_connexion() {
 }
 
 no_connexion()
+
+//affiche uniquement les posts lié au tag selectionné
+function filter_tag(tag) {
+  console.log(tag);
+  var x = document.getElementsByClassName("post");
+  var i;
+  for (i = 0; i < x.length; i++) {
+    if (x[i].classList.contains(tag)) {
+      x[i].style.display = "block";
+    } else {
+      x[i].style.display = "none";
+    }
+  }
+}

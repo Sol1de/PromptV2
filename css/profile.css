@@ -121,6 +121,7 @@ main {
     background-color: var(--main-background-color);
     min-height: fit-content;
     border-radius: 20px;
+    padding-bottom: 10px;
 }
 
 .content-post-history {
@@ -140,13 +141,14 @@ main {
     min-height: 100%;
     width: 35%;
     margin-left: 10px;
+    margin-top: 15px;
     position: absolute;
     top: 120px;
     right: 0;
     align-items: center;
     margin-right: 5px;
     background-color: black;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .search {
@@ -159,7 +161,7 @@ main {
     position: sticky;
     top: 10px;
     right: 0;
-    width: 80%;
+    width: 95%;
 }
 
 .form-searchbar {

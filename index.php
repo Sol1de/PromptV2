@@ -56,7 +56,7 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
         <main class="main">
 
             <?php foreach ($posts as $post) { ?>
-                <div class="post">
+                <div class="post <?php echo $post['tag'];?>">
                     <div class="username">
                     <img src="Assets/user.svg" class="profile-picture" alt="logo" height="65" width="65">
                         <div>
@@ -118,7 +118,19 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
                     <input class="searchbar" type="search" name="search" id="" placeholder="Rechercher"><button class="searchbutton"type="submit"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #626268;"></i></button>
                 </form>
                 <div class="search-result">
-                    <p>Aucun resultats trouvé</p>
+                    <ul>
+                        <li><button onclick="filter_tag('général')">général</button></li>
+                        <li><button onclick="filter_tag('life')">life</button></li>
+                        <li><button onclick="filter_tag('infos')">infos</button></li>
+                        <li><button onclick="filter_tag('life')">life</button></li>
+                        <li><button onclick="filter_tag('work')">work</button></li>
+                        <li><button onclick="filter_tag('travel')">travel</button></li>
+                        <li><button onclick="filter_tag('sport')">sport</button></li>
+                        <li><button onclick="filter_tag('informatique')">informatique</button></li>
+                        <li><button onclick="filter_tag('cuisine')">cuisine</button></li>
+                        <li><button onclick="filter_tag('musique')">musique</button></li>
+                        <li><button onclick="filter_tag('média')">média</button></li>
+                    </ul>
                 </div>
             </div>
         </aside>
@@ -143,7 +155,7 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
                 <option value="informatique">informatique</option>
                 <option value="cuisine">cuisine</option>
                 <option value="musique">musique</option>
-                <option value="cinéma">cinéma</option>
+                <option value="cinéma">média</option>
             </select>
             <button type="submit" name="send-post"><i class="fa-regular fa-paper-plane fa-beat-fade fa-2xl" style="color: #24242e;"></i></button>
             <input type="hidden" name="name" value="<?= $_SESSION['user_name'] ?>">
