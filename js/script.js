@@ -75,3 +75,15 @@ function filter_tag(tag) {
     }
   }
 }
+
+//fenetre de confirmation de suppression de post
+function confirm_supp() {
+  var answer = confirm("Confirmer la suppression du post ?");
+  if (answer == true) {
+      alert("Vous avez cliqué sur OK");
+      document.querySelector(".form").action = "delete.php";
+  } else {
+      document.querySelector(".form").action = "";
+      exit();
+  }
+}

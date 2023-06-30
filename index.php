@@ -82,7 +82,7 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
                                 <?php if( $_SESSION['user_name'] == $post['name']) { ?>
                                 <form class="form" action="delete.php" method="POST">
                                     <input type="hidden" name="supp" value="<?= $post['id'] ?>">
-                                    <button class="supp-post" type="submit">Supp</button>
+                                    <button onclick="confirm_supp()" class="supp-post" type="submit">Supp</button>
                                 </form>
                                 <?php } ?>
 
