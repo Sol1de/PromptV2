@@ -32,8 +32,8 @@ header {
     min-height: 100vh;
 }
 
-.no-connected {
-    display: flex;
+#no-connexion {
+    display: none;
     height: 10%;
     width: 100%;
     background-color: var(--main-background-color);
@@ -49,8 +49,8 @@ header {
     backdrop-filter: blur(6px);
 }
 
-.no-connected-container {
-    display: flex;
+#no-connexion-container {
+    display: none;
     justify-content: center;
     color: white;
     padding: 20px;
@@ -149,6 +149,8 @@ header {
 }
 
 .content {
+    display: flex;
+    flex-direction: column;
     color: white;
     margin-top: 0;
     margin-bottom: 0;
@@ -163,6 +165,14 @@ header {
 
 .content p {
     margin: 0;
+}
+
+.end-content {
+    display: flex;
+}
+
+.supp-post {
+    margin-left: 10px;
 }
 
 /* Style de la scrollbar par défaut de la page */

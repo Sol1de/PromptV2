@@ -15,9 +15,11 @@
 
     //préparation 
     $requete = $database->prepare("SELECT * FROM user WHERE id = :user_id");
+    $posts = $database->prepare("SELECT * FROM post WHERE name = :user_name");
 
     //éxecution
     $requete->execute(['user_id' => $user_id]);
+    $posts->execute(['user_name' => $user_name]);
 
     //tablaeau associatif
     $user_info = $requete->fetch(PDO::FETCH_ASSOC);
@@ -80,14 +82,44 @@
                 </div>
 
             </div>
+
             
-            <div class="post-history">
+            
+        <div class="post-history">
+
+            <?php foreach ($posts as $post) { ?>
                     <div class="content-post-history">
- 
+                        <div class="username">
+                        <img src="Assets/user.svg" class="profile-picture" alt="logo" height="65" width="65">
+                            <div>
+                                <p><?= $post['name']; ?></p>
+                                <p class="time">le <?php
+
+                                $date = new DateTime($post['date']);
+                                echo $date->format('d/m/Y à H:i'); 
+                                
+                                ?></p>
+                            </div>  
+                        </div>
+                        <div class="action-post">
+                            <div class="action">
+                                <a><i class="fa-regular fa-heart fa-2xl" style="color: black;"></i></a>
+                                <a><i class="fa-solid fa-repeat fa-2xl" style="color: black;"></i></i></a>
+                            </div>
+                            <div class="content">
+                                <p><?= $post['content'] ?></p>
+                            </div>
+                            <p>Tag : <?= $post['tag'] ?></p>
+                        
+                            <form class="form" action="delete.php" method="POST">
+                                <input type="hidden" name="supp" value="<?= $post['id'] ?>">
+                                <button type="submit">Supp</button>
+                            </form>
+
+                        </div>
+
                     </div>
-
-            </div>
-
+                <?php } ?>
         </div>
 
         

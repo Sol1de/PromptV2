@@ -119,18 +119,19 @@ main {
     flex-direction: column;
     align-items: center;
     background-color: var(--main-background-color);
-    min-height: 65%;
+    min-height: fit-content;
     border-radius: 20px;
 }
 
 .content-post-history {
-    display: flex;
-    height: 45%;
-    width: 94%;
-    margin-top: 20px;
-    margin-bottom: 20px;
     background-color: var(--post-background-color);
+    margin-top: 10px;
     border-radius: 20px;
+    min-height: 270px;
+    width: 95%;
+    max-height: 270px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .left-side {
@@ -213,7 +214,6 @@ main {
     font-size: 24px;
     color: white;
     display: flex;
-    align-items: center;
     gap: 12px;
     font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 600;
@@ -246,6 +246,8 @@ main {
 }
 
 .content {
+    display: flex;
+    flex-direction: column;
     color: white;
     margin-top: 0;
     margin-bottom: 0;
@@ -261,3 +263,12 @@ main {
 .content p {
     margin: 0;
 }
+
+.end-content {
+    display: flex;
+}
+
+.supp-post {
+    margin-left: 10px;
+}
+

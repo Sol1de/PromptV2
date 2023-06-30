@@ -21,7 +21,6 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="css/sidenav.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="https://kit.fontawesome.com/f66cb7be42.js" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
     <title>Prompt</title>
 </head>
 <body>
@@ -29,8 +28,8 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
 <?php if (isset($_SESSION['user_mail'])) { ?>
     
 <?php } else { ?>
-    <div class="no-connected">
-        <div class="no-connected-container">
+    <div id="no-connexion">
+        <div id="no-connexion-container">
             <p>Vous devez vous <span><a href="connexion.php" id="connected">connecter</a></span> afin de pouvoir poster !</p>
         </div>
     </div>
@@ -77,13 +76,19 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         <div class="content">
                             <p><?= $post['content'] ?></p>
+                            <div class="end-content">
+
+                                <p>Tag : <?= $post['tag'] ?></p>
+                                <?php if( $_SESSION['user_name'] == $post['name']) { ?>
+                                <form class="form" action="delete.php" method="POST">
+                                    <input type="hidden" name="supp" value="<?= $post['id'] ?>">
+                                    <button class="supp-post" type="submit">Supp</button>
+                                </form>
+                                <?php } ?>
+
+                            </div>
                         </div>
-                        <p>Tag : <?= $post['tag'] ?></p>
-                        
-                        <form class="form" action="delete.php" method="POST">
-                            <input type="hidden" name="supp" value="<?= $post['id'] ?>">
-                            <button type="submit">Supp</button>
-                        </form>
+
 
                     </div>
 
@@ -98,7 +103,7 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
                     <div class="profile-action">
 
                         <div class="status">
-                            <p id="pseudo"><?php $SESSION['user_name'] ?></p>
+                            <p id="pseudo"><?php echo $_SESSION['user_name'] ?></p>
                             <p id="connexion">Connecté</p>
                         </div>
                         
@@ -151,6 +156,7 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
             <p>© 2021 - Prompt</p>
         </div>
     </footer>
-    
+
+    <script src="js/script.js"></script>
 </body>
 </html>
