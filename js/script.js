@@ -46,19 +46,18 @@ window.onclick = function (event) {
   }
 };
 
+//popup de non connexion
 function no_connexion() {
 
   console.log("no connexion");
   var div1 = document.getElementById("no-connexion");
   var div2 = document.getElementById("no-connexion-container");
 
-  if (div1.style.display === "none") {
-      if (div2.style.display === "none") {
+  if ((div1.style.display == "none" || div1.style.display == "") && (div2.style.display == "none" || div2.style.display == "")) {
         div1.style.display = "flex";
         div2.style.display = "flex";
-  }
 }
 
 }
 
-window.onload = no_connexion()
+no_connexion()

@@ -108,19 +108,23 @@
                             </div>
                             <div class="content">
                                 <p><?= $post['content'] ?></p>
+
+                                <div class="end-content">
+
+                                <p>Tag : <?= $post['tag'] ?></p>
+                                <form class="form" action="delete.php" method="POST">
+                                    <input type="hidden" name="supp" value="<?= $post['id'] ?>">
+                                    <button class="supp-post" type="submit">Supp</button>
+                                </form>
                             </div>
-                            <p>Tag : <?= $post['tag'] ?></p>
-                        
-                            <form class="form" action="delete.php" method="POST">
-                                <input type="hidden" name="supp" value="<?= $post['id'] ?>">
-                                <button type="submit">Supp</button>
-                            </form>
+                            </div>
 
                         </div>
 
                     </div>
                 <?php } ?>
         </div>
+    </div>
 
         
         <div class="left-side">
