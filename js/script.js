@@ -80,7 +80,7 @@ function filter_tag(tag) {
 function confirm_supp() {
   var answer = confirm("Confirmer la suppression du post ?");
   if (answer == true) {
-      alert("Vous avez cliqué sur OK");
+      alert("Vous avez confirmé la suppression");
       document.querySelector(".form").action = "delete.php";
   } else {
       document.querySelector(".form").action = "";

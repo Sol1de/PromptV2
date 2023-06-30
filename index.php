@@ -82,7 +82,7 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
                                 <?php if( $_SESSION['user_name'] == $post['name']) { ?>
                                 <form class="form" action="delete.php" method="POST">
                                     <input type="hidden" name="supp" value="<?= $post['id'] ?>">
-                                    <button onclick="confirm_supp()" class="supp-post" type="submit">Supp</button>
+                                    <button onclick="confirm_supp()" class="supp-post" type="submit"><i class="fa-solid fa-trash fa-2xl" style="color: #fe2701;"></i></button>
                                 </form>
                                 <?php } ?>
 
@@ -119,7 +119,7 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
                 </form>
                 <div class="search-result">
                     <ul>
-                        <li><button onclick="filter_tag('général')">général</button></li>
+                        <li><button onclick="filter_tag('general')">général</button></li>
                         <li><button onclick="filter_tag('life')">life</button></li>
                         <li><button onclick="filter_tag('infos')">infos</button></li>
                         <li><button onclick="filter_tag('life')">life</button></li>
@@ -146,6 +146,7 @@ $posts = $requete->fetchAll(PDO::FETCH_ASSOC);
             <form class="postForm" method="POST" action="insert-post.php">
             <textarea type="text" name="content" placeholder="une envie de partager ?"></textarea>
             <select name="tag" id="">
+                <option value="">Aucun</option>
                 <option value="general">général</option>
                 <option value="infos">infos</option>
                 <option value="life">life</option>

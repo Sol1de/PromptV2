@@ -173,6 +173,9 @@ header {
 
 .supp-post {
     margin-left: 10px;
+    background-color: var(--post-background-color);
+    border: none;
+
 }
 
 /* Style de la scrollbar par défaut de la page */
@@ -328,7 +331,7 @@ body::-webkit-scrollbar-track:hover {
 
 .search-result {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: #C5C5CF;
     color: #494949;
@@ -340,6 +343,24 @@ body::-webkit-scrollbar-track:hover {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 400;
     font-size: 24px;
+}
+
+.search-result ul {
+    padding: 0;
+    margin-left: 10px;
+}
+
+.search-result li {
+    list-style: none;
+}
+
+.search-result button {
+    background-color: #494949;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 #post-button {
